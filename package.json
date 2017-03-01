@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/LeonardoGomesRibeiro/music-search/issues"
   },
-  "homepage": "https://github.com/LeonardoGomesRibeiro/music-search#readme"
+  "homepage": "https://github.com/LeonardoGomesRibeiro/music-search#readme",
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.5.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0"
+  }
 }
