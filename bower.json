@@ -1,0 +1,23 @@
+{
+  "name": "music-search",
+  "description": "Repository used to implement a music search using spotfy API.",
+  "main": "index.js",
+  "authors": [
+    "Leonardo Ribeiro"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/LeonardoGomesRibeiro/music-search",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.2"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
+}

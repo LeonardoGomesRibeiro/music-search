@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="myApp">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div ng-controller="SearchMusicController">
+		<form method="post" ng-submit="search()">
+			<p>Find your favorite songs : <input type="text" ng-model="searchText"></p>
+			<input type="submit" value="Buscar">
+		</form>
+		<p class="results-title" ng-if="artists.length > 0">
+			<span>See the artists</span>
+		</p>
+		<div class="img" ng-if="artists.length > 0" ng-repeat="r in artists">
+			<a target="_blank" href="{{r.images[0].url}}">
+				<img src="{{r.images[0].url}}" alt="{{r.name}}" width="300" height="200">
+			</a>
+			<div class="desc">{{r.name}}</div>
+		</div>
+		<p class="results-title" ng-if="tracks.length > 0">
+			<span>See the music</span>
+		</p>
+		<div class="img" ng-if="tracks.length > 0" ng-repeat="t in tracks">
+			<div class="desc">{{t.name}}</div>
+		</div>
+	</div>
+	
+	<script src="../bower_components/angular/angular.js"></script>
+	<script src="../app.js"></script>
+</body>
+</html>

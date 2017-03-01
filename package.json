@@ -1,0 +1,25 @@
+{
+  "name": "music-search",
+  "version": "1.0.0",
+  "description": "Repository used to implement a music search using spotfy API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cookie-parser": "1.3.2",
+    "express": "~4.0.0",
+    "querystring": "~0.2.0",
+    "request": "~2.34.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeonardoGomesRibeiro/music-search.git"
+  },
+  "author": "Leonardo Ribeiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeonardoGomesRibeiro/music-search/issues"
+  },
+  "homepage": "https://github.com/LeonardoGomesRibeiro/music-search#readme"
+}
