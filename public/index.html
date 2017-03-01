@@ -3,6 +3,7 @@
 <head>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 	<link rel="stylesheet" href="css/app.css">
+	<link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 	<div ng-controller="SearchMusicController">
@@ -14,7 +15,8 @@
 			<span>See the artists</span>
 		</p>
 		<div class="img" ng-if="artists.length > 0" ng-repeat="r in artists">
-			<a target="_blank" href="{{r.images[0].url}}">
+			<i ng-if="r.images.length == 0" class="fa fa-user fa-5x"></i>
+			<a ng-if="r.images.length > 0" target="_blank" href="#">
 				<img src="{{r.images[0].url}}" alt="{{r.name}}" width="300" height="200">
 			</a>
 			<div class="desc">{{r.name}}</div>
