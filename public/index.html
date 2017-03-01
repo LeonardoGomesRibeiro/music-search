@@ -19,15 +19,10 @@
 			</a>
 			<div class="desc">{{r.name}}</div>
 		</div>
-		<p class="results-title" ng-if="tracks.length > 0">
-			<span>See the music</span>
-		</p>
-		<div class="img" ng-if="tracks.length > 0" ng-repeat="t in tracks">
-			<div class="desc">{{t.name}}</div>
-		</div>
 	</div>
 	
 	<script src="../bower_components/angular/angular.js"></script>
 	<script src="../app.js"></script>
+	<script src="../service/spotify-service.js"></script>
 </body>
 </html>
