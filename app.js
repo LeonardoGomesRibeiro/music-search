@@ -2,17 +2,17 @@
 var myApp = angular.module('myApp', []);
 
 // Define the `PhoneListController` controller on the `SearchMusicApp` module
-myApp.controller('SearchMusicController', function ($scope, $http, $localStorage, SpotifySearchService) {
+myApp.controller('SearchMusicController', function ($scope, $http, $localstorage, SpotifySearchService) {
 	$scope.artists = [];
 	$scope.tracks = [];
 	$scope.search = function (){
 		var searchTerm = $scope.searchText;
-		if ($localStorage.containsKey(searchTerm)) {
-			$scope.artists = $localStorage.getObject(searchTerm);
+		if ($localstorage.containsKey(searchTerm)) {
+			$scope.artists = $localstorage.getObject(searchTerm);
 		} else {
 			SpotifySearchService.spotifySearch(searchTerm).then(function(response) {
 					$scope.artists = response.data.artists.items;
-					$localStorage.setObject(searchTerm, $scope.artists);
+					$localstorage.setObject(searchTerm, $scope.artists);
 			});	
 		}
 	};

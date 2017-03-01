@@ -13,7 +13,7 @@ myApp.factory('$localstorage', ['$window', function($window) {
     getObject: function(key) {
       return JSON.parse($window.localStorage[key] || '{}');
     },
-	containsKey: function () {
+	containsKey: function (key) {
 		return $window.localStorage[key] != null;
 	}
   }
