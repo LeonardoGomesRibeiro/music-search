@@ -1,22 +1,34 @@
 describe('myApp', function () {
 
-  beforeEach(module('myApp'));
+	beforeEach(module('myApp'));
+	var SpotifySearchService;
+	beforeEach(inject(function(_SpotifySearchService_) {
+		SpotifySearchService = _SpotifySearchService_;
+	}));
 
-  var $controller;
-  beforeEach(inject(function(_$controller_, $localstorage){
-    $controller = _$controller_;
-  }));
+	beforeEach(inject(function ($rootScope, $controller, _SpotifySearchService_ ) {
+		scope = $rootScope.$new();
+		spotifyService = _SpotifySearchService_;
+		createController = function() {
+			return $controller('SearchMusicController', {
+				$scope: scope,
+				SpotifySearchService: spotifyService
+			}); 
+		};
+	}));
 
-  describe('find artists', function () {
-		it('should display search results', function () {
-			var $scope = {};
-			var $localstorage = {};
-			var SpotifySearchService = {};
-			$scope.searchText = 'Muse';
-			var controller = $controller('SearchMusicController', { $scope: $scope, $localstorage:$localstorage, SpotifySearchService: SpotifySearchService });
-			$scope.search();
-			expect($scope.artists.length).toBe(1);
+	describe('spotify-service', function () {
+		it('is defined', function () {			
+			 //expect(SpotifySearchService).toBeDefined();
 		});	
+		
+		it('will return no results', function () {
+			var controller = new createController();
+			expect(scope).toBeDefined();
+			expect(controller).toBeDefined();
+			scope.search();
+			expect(scope.artists).toBeDefined();
+			expect(scope.artists.length).toBe(0);
+		});
 	});
-
 });

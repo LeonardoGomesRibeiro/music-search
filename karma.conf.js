@@ -18,6 +18,8 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
 	  'bower_components/angular-mocks/angular-mocks.js',	  
 	  'app.js',
+	  'factory/localstorage-factory.js',
+	  'service/spotify-service.js', 
 	  'tests/*.js'
     ],
 
